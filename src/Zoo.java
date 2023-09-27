@@ -47,20 +47,15 @@ public class Zoo {
         return -1;
     }
     public boolean removeAnimal(Animal an){
-        int pos=searchAnimal(an);
-        Animal[] proxyAnimals=new Animal[this.animals.length-1];
-        System.out.println("name :" + animals[pos].name);
-        if(pos==-1)
-            return false;
-        int j = 0;
-        for(int i = pos;i<animals.length-1;i++)
-        {
+        int pos = searchAnimal(an);
 
-            if(animals[i+1]!=null) {
-                animals[i] = animals[i + 1];
-            }
+        if (pos == -1)
+            return false;
+        for (int i = pos; i < animals.length - 1; i++) {
+            animals[i] = animals[i + 1];
         }
+        animals[animals.length - 1] = null;
+
         return true;
-        // needs modif
     }
 }

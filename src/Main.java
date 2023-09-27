@@ -32,7 +32,7 @@ public class Main {
         myZoo.setNumberOfCages(numCages);
         System.out.println(myZoo.getZooName() + " comporte de " + myZoo.getNumberOfCages() + " cages.");
         sc.close();*/
-        Animal lion=new Animal("Lion","Lion",10,true);
+       // Animal lion=new Animal("Lion","Lion",10,true);
 
         Zoo myZoo=new Zoo(25,"MyZoo","Tunis",20);
         Scanner scanner = new Scanner(System.in);
@@ -68,13 +68,14 @@ public class Main {
                 myZoo.displayAnimals();
                 break;
             case 4:
+                scanner.close();
                 System.exit(0);
                 break;
             default:
                 System.out.println("Invalid selection");
                 break;
         }
-        }while(choix!=4);
+        }while(true);
 
 
         /*
