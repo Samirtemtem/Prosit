@@ -32,7 +32,7 @@ public class Main {
         myZoo.setNumberOfCages(numCages);
         System.out.println(myZoo.getZooName() + " comporte de " + myZoo.getNumberOfCages() + " cages.");
         sc.close();*/
-        Animal lion=new Animal("Lion","Lion",10,true);
+       // Animal lion=new Animal("Lion","Lion",10,true);
 
         Zoo myZoo=new Zoo(25,"MyZoo","Tunis",20);
         Scanner scanner = new Scanner(System.in);
