@@ -58,7 +58,7 @@ public class Main {
         }
         */
         // -------- DEBUG SECTION ------------
-        Zoo myZoo = new Zoo(20, "Zoo Demo","Tunis",20);
+        Zoo myZoo = new Zoo(40, "Zoo Demo","Tunis");
         Scanner scanner = new Scanner(System.in);
         int choix = 0;
         do {

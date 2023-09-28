@@ -2,13 +2,17 @@ public class Zoo {
     public Animal[] animals;
     public String name;
     public String city;
-    public final int nbrCages;
+    public final int nbrCages = 25;
     public int nbrAnimaux = 0;
-    public Zoo(int nbrAnimals,String name, String city, int nbrCages) {
+    public Zoo(int nbrAnimals,String name, String city) {
+        if (nbrAnimals>nbrCages)
+        {
+            System.out.println("Number of animals must be below number of cages(25)");
+            return;
+        }
         this.animals=new Animal[nbrAnimals];
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
     }
     public boolean addAnimal(Animal animal){
         if (searchAnimal(animal)!=-1)
