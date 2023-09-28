@@ -2,10 +2,9 @@ public class Zoo {
     public Animal[] animals;
     public String name;
     public String city;
-    public int nbrCages;
-    public static int nbrAnimaux = 0;
+    public final int nbrCages;
+    public int nbrAnimaux = 0;
     public Zoo(int nbrAnimals,String name, String city, int nbrCages) {
-        nbrAnimaux++;
         this.animals=new Animal[nbrAnimals];
         this.name = name;
         this.city = city;
@@ -16,10 +15,14 @@ public class Zoo {
         {
          return false;
         }
-        System.out.println(nbrAnimaux);
-
-        this.animals[nbrAnimaux]=animal;
-        System.out.println(this.animals[nbrAnimaux++].name);
+        // System.out.println(animal.name+" ADDING ----");
+        if (!isZooFull()) {
+            this.animals[nbrAnimaux] = animal;
+         //   System.out.println("INDICE : "+nbrAnimaux++);
+            nbrAnimaux++;
+            return true;
+        }
+        return false;
         /*
         for (int i = 0; i < this.animals.length; i++) {
             if(this.animals[i]==null) {
@@ -27,7 +30,11 @@ public class Zoo {
                 return true;
             }
         }*/
-        return false;
+    }
+
+    public boolean isZooFull()
+    {
+        return nbrAnimaux >= nbrCages;
     }
     public void displayAnimals()
     {
@@ -41,16 +48,16 @@ public class Zoo {
             System.out.println("Animal["+i+"] = family="+animal.family+" | name = "+animal.name+" | age ="+animal.age+"| Mammal = "+((animal.isMammal) ? "yes" :  "no"));
 
         }*/
-        if (this.animals[1]!=null)
+        if (this.animals[0]!=null)
         {
-            for (i = 1; i < nbrAnimaux; i++) {
+            for (i = 0; i < nbrAnimaux; i++) {
                 System.out.println("Animal[" + i + "] = family=" + animals[i].family + " | name = " + animals[i].name + " | age =" + animals[i].age + "| Mammal = " + ((animals[i].isMammal) ? "yes" : "no"));
             }
         }
     }
     public int searchAnimal(Animal animal)
     {
-        for (int i = 1; i < nbrAnimaux; i++) {
+        for (int i = 0; i < nbrAnimaux; i++) {
             if (this.animals[i]!=null) {
                 if (animals[i].name.equals(animal.name)) {
                     return i;
@@ -72,5 +79,14 @@ public class Zoo {
         nbrAnimaux--;
         return true;
         // needs modif
+    }
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
+        if (z1.nbrAnimaux > z2.nbrAnimaux) {
+            return z1;
+        } else if (z1.nbrAnimaux < z2.nbrAnimaux) {
+            return z2;
+        } else {
+            return null;
+        }
     }
 }
