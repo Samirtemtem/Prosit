@@ -39,6 +39,8 @@ public class Main {
         int choix = 0;
         do{
         System.out.println("Zoo Menu");
+
+
         System.out.println("1. Add animal | 2. Delete animal | 3. Display animals | 4. Leave");
 
         System.out.print("Select your choice : ");
@@ -61,8 +63,8 @@ public class Main {
             case 2:
                 System.out.println("Animal ID :");
                 int id = scanner.nextInt();
-                System.out.println(myZoo.animals[id-1]);
-                myZoo.removeAnimal(myZoo.animals[id-1]);
+                System.out.println(myZoo.animals[id]);
+                myZoo.removeAnimal(myZoo.animals[id]);
                 break;
             case 3:
                 myZoo.displayAnimals();
