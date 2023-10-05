@@ -49,6 +49,9 @@ public class Zoo {
             return;
         }
         this.animals=new Animal[nbrAnimals];
+        if (name == "")
+            System.out.println("Le nom d'un zoo ne peut pas etre vide");
+            return;
         this.name = name;
         this.city = city;
     }
