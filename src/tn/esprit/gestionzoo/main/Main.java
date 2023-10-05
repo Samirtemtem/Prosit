@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -58,7 +62,7 @@ public class Main {
         }
         */
         // -------- DEBUG SECTION ------------
-        Zoo myZoo = new Zoo(40, "Zoo Demo","Tunis");
+        Zoo myZoo = new Zoo(25, "Zoo Demo","Tunis");
         Scanner scanner = new Scanner(System.in);
         int choix = 0;
         do {
@@ -89,7 +93,7 @@ public class Main {
                     System.out.println("Animal ID :");
                     int id = scanner.nextInt();
                     // System.out.println(myZoo.animals[id]);
-                    myZoo.removeAnimal(myZoo.animals[id]);
+                    myZoo.removeAnimal(myZoo.getAnimals()[id]);
                     break;
                 case 3:
                     myZoo.displayAnimals();
