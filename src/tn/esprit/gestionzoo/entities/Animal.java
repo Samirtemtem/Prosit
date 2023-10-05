@@ -25,6 +25,8 @@ public class Animal {
     }
 
     public void setAge(int age) {
+        if (age<0)
+            return;
         this.age = age;
     }
 
