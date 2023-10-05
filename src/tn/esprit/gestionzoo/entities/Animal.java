@@ -45,6 +45,11 @@ public class Animal {
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
         this.name = name;
+        if (age<0)
+        {
+            System.out.println("Age est negative");
+            return;
+        }
         this.age = age;
         this.isMammal = isMammal;
     }
