@@ -80,14 +80,15 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals);
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (searchAnimal(animal) != -1)
-            return false;
-        if (isZooFull())
-            return false;
+    public void addAnimal(Animal animal) throws ZooFullException,InvalidAgeException {
+        if (isZooFull()) {
+            throw new ZooFullException("Zoo est plein");
+        }
+        if (animal.getAge() < 0) {
+            throw new InvalidAgeException("Age invalide pour l'animal :" + animal.getName());
+        }
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
     }
 
     public void addAquaticAnimal(Aquatic aquatic) {

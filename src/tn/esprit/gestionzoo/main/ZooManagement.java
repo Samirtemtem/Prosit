@@ -71,11 +71,28 @@ public class ZooManagement {
             aquatics[i].swim();
         }
 
-        System.out.println(myZoo.averageSwimmingSpeed());
-        myZoo.displayNumberOfAquaticsByType();
+    //    System.out.println(myZoo.averageSwimmingSpeed());
+      //  myZoo.displayNumberOfAquaticsByType();
 
-        System.out.println(myZoo.maxPenguinSwimmingDepth());
+      //  System.out.println(myZoo.maxPenguinSwimmingDepth());
+        try {
+            myZoo.addAnimal(lion);
+            myZoo.addAnimal(dog);
+        } catch (ZooFullException | InvalidAgeException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        Animal dog2 = new Animal("Canine", "lll", -2, true);
 
+
+        try {
+            myZoo.addAnimal(dog2);
+        } catch (InvalidAgeException | ZooFullException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+
+        myZoo.displayAnimals();
     }
+
 
 }
